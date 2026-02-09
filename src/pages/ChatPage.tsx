@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, type FormEvent, type Dispatch, type SetStateAction } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getApiKey, setApiKey, removeApiKey, streamChat, hasBackendAvailable, type ChatMessage } from "../lib/ai";
-import { getMentalist, getSelectedMentalistId, setSelectedMentalistId, type Mentalist } from "../lib/mentalists";
+import { getMentalist, getSelectedMentalistId, setSelectedMentalistId, MENTALISTS, type Mentalist } from "../lib/mentalists";
 import MentalistSelector from "../components/MentalistSelector";
 
 interface Message {
@@ -324,45 +324,42 @@ export default function ChatPage() {
           >
             <div className="p-2">
               <p className="text-xs text-ghost/60 px-3 py-2 font-medium">Switch Mentalist</p>
-              {Object.values(getMentalist).map((m) => {
-                const mentalistData = getMentalist(m.id || 'oz');
-                return (
-                  <button
-                    key={mentalistData.id}
-                    onClick={() => handleMentalistSelect(mentalistData.id)}
-                    className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl transition-colors ${
-                      selectedMentalistId === mentalistData.id
-                        ? 'bg-white/10'
-                        : 'hover:bg-white/5'
-                    }`}
-                  >
-                    <img
-                      src={mentalistData.avatarUrl}
-                      alt={mentalistData.name}
-                      className="w-8 h-8 rounded-full object-cover ring-1"
-                      style={{ ringColor: `${mentalistData.themeColor}60` }}
-                    />
-                    <div className="flex-1 text-left">
-                      <p className="text-sm text-white font-medium">{mentalistData.name}</p>
-                      <p className="text-[10px] text-ghost/60">{mentalistData.title}</p>
-                    </div>
-                    {selectedMentalistId === mentalistData.id && (
-                      <svg
-                        className="w-4 h-4"
-                        style={{ color: mentalistData.themeColor }}
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    )}
-                  </button>
-                );
-              })}
+              {Object.values(MENTALISTS).map((mentalistData) => (
+                <button
+                  key={mentalistData.id}
+                  onClick={() => handleMentalistSelect(mentalistData.id)}
+                  className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl transition-colors ${
+                    selectedMentalistId === mentalistData.id
+                      ? 'bg-white/10'
+                      : 'hover:bg-white/5'
+                  }`}
+                >
+                  <img
+                    src={mentalistData.avatarUrl}
+                    alt={mentalistData.name}
+                    className="w-8 h-8 rounded-full object-cover ring-1"
+                    style={{ ringColor: `${mentalistData.themeColor}60` }}
+                  />
+                  <div className="flex-1 text-left">
+                    <p className="text-sm text-white font-medium">{mentalistData.name}</p>
+                    <p className="text-[10px] text-ghost/60">{mentalistData.title}</p>
+                  </div>
+                  {selectedMentalistId === mentalistData.id && (
+                    <svg
+                      className="w-4 h-4"
+                      style={{ color: mentalistData.themeColor }}
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  )}
+                </button>
+              ))}
             </div>
           </motion.div>
         )}
