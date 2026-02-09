@@ -369,7 +369,9 @@ export default function ChatPage() {
                   alt={mentalist.name}
                   className={`${
                     mentalist.id === 'oz' 
-                      ? 'w-24 h-24 sm:w-28 sm:h-28' 
+                      ? 'w-24 h-24 sm:w-28 sm:h-28'
+                      : mentalist.id === 'lior'
+                      ? 'w-[6.75rem] h-[6.75rem] sm:w-[7.875rem] sm:h-[7.875rem]'
                       : 'w-[7.5rem] h-[7.5rem] sm:w-[8.75rem] sm:h-[8.75rem]'
                   } rounded-full object-cover ring-4 shadow-2xl mx-auto mb-6`}
                   style={{ 
