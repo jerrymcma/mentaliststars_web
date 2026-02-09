@@ -136,6 +136,14 @@ export default function ChatPage() {
     }
   }, []);
 
+  // Auto-scroll to bottom when messages change
+  useEffect(() => {
+    const element = document.querySelector('[data-messages-end]');
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "end" });
+    }
+  }, [messages]);
+
   const handleMentalistSelect = (id: string) => {
     setSelectedMentalistId(id);
     setSelectedMentalistIdState(id);
@@ -488,7 +496,7 @@ export default function ChatPage() {
             </motion.div>
           ))}
         </AnimatePresence>
-        <div ref={messagesEndRef} />
+        <div ref={messagesEndRef} data-messages-end />
       </div>
 
       {/* Input area */}
