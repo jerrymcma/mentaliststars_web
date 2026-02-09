@@ -255,6 +255,27 @@ export default function ChatPage() {
 
       {/* Header */}
       <header className="relative z-10 flex items-center gap-3 px-4 sm:px-6 py-3 border-b border-white/[0.06] bg-midnight/80 backdrop-blur-xl">
+        <div className="relative">
+          <img
+            src={mentalist.avatarUrl}
+            alt={mentalist.name}
+            className="w-10 h-10 rounded-full object-cover ring-2"
+            style={{ ringColor: `${mentalist.themeColor}60` }}
+          />
+          <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-emerald-500 rounded-full border-2 border-midnight" />
+        </div>
+        <div className="flex-1 min-w-0">
+          <h1 className="text-sm font-display font-semibold text-white tracking-wide">
+            {mentalist.name}
+          </h1>
+          <p className="text-[11px] font-body">
+            <span style={{ color: `${mentalist.themeColor}CC` }}>
+              {mentalist.title}
+            </span>
+            <span className="text-ghost/50"> • </span>
+            <span className="text-emerald-500">Online</span>
+          </p>
+        </div>
         <button
           onClick={() => setShowMentalistMenu(!showMentalistMenu)}
           className="p-2 rounded-lg hover:bg-white/[0.06] transition-colors group"
@@ -274,61 +295,16 @@ export default function ChatPage() {
             />
           </svg>
         </button>
-        <div className="relative">
-          <img
-            src={mentalist.avatarUrl}
-            alt={mentalist.name}
-            className="w-10 h-10 rounded-full object-cover ring-2"
-            style={{ ringColor: `${mentalist.themeColor}60` }}
-          />
-          <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-emerald-500 rounded-full border-2 border-midnight" />
-        </div>
-        <div className="flex-1 min-w-0">
-          <h1 className="text-sm font-display font-semibold text-white tracking-wide">
-            {mentalist.name}
-          </h1>
-          <p
-            className="text-[11px] font-body"
-            style={{ color: `${mentalist.themeColor}CC` }}
-          >
-            {mentalist.title} • Online
-          </p>
-        </div>
-        <button
-          onClick={() => setShowSettings(true)}
-          className="p-2 rounded-lg hover:bg-white/[0.06] transition-colors group"
-          title="Settings"
-        >
-          <svg
-            className="w-5 h-5 text-ghost/50 group-hover:text-gold/70 transition-colors"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={1.5}
-              d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
-            />
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={1.5}
-              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-            />
-          </svg>
-        </button>
       </header>
 
       {/* Mentalist Menu Dropdown */}
       <AnimatePresence>
         {showMentalistMenu && (
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-            className="absolute top-16 left-4 z-50 bg-deep-purple border border-white/10 rounded-2xl overflow-hidden shadow-2xl w-64"
+            exit={{ opacity: 0, x: 20 }}
+            className="absolute top-16 right-4 z-50 bg-deep-purple border border-white/10 rounded-2xl overflow-hidden shadow-2xl w-64"
           >
             <div className="p-2">
               <p className="text-xs text-ghost/60 px-3 py-2 font-medium">Switch Mentalist</p>
@@ -406,8 +382,9 @@ export default function ChatPage() {
                 transition={{ delay: 0.4 }}
                 className="font-display text-2xl sm:text-3xl font-bold text-white mb-2"
               >
-                Welcome to the{" "}
-                <span className="shimmer-text">Mind's Eye</span>
+                Welcome
+                <br />
+                to the <span className="shimmer-text">Mind's Eye</span>
               </motion.h2>
 
               <motion.p
@@ -534,7 +511,7 @@ export default function ChatPage() {
           </button>
         </form>
         <p className="text-[10px] text-ghost/30 text-center mt-2 font-body">
-          Powered by the mysteries of the mind ✦ Inspired by {mentalist.name}
+          Powered by the mind ✦ Inspired by {mentalist.name}
         </p>
       </div>
 
