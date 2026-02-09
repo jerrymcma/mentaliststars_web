@@ -98,7 +98,7 @@ Behavioral rules:
   lior: {
     id: "lior",
     name: "Lior Suchard",
-    title: "Master Mentalist • World's Most Miraculous",
+    title: "Master of the Miraculous",
     tagline: "Always think happy thoughts, you never know who might be reading them.",
     avatarUrl: "/lior-suchard.png",
     themeColor: "#06b6d4", // cyan

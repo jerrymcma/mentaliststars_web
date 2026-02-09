@@ -278,13 +278,13 @@ export default function ChatPage() {
         </div>
         <button
           onClick={() => setShowMentalistMenu(!showMentalistMenu)}
-          className="p-2 rounded-lg hover:bg-white/[0.06] transition-colors group"
+          className="p-2.5 rounded-lg hover:bg-[#fbbf24]/10 transition-colors group active:bg-[#fbbf24]/20"
           title="Switch Mentalist"
         >
           <svg
-            className="w-5 h-5 text-ghost/50 group-hover:text-gold/70 transition-colors"
+            className="w-6 h-6"
+            style={{ color: '#fbbf24', stroke: '#fbbf24' }}
             fill="none"
-            stroke="currentColor"
             viewBox="0 0 24 24"
           >
             <path
@@ -493,20 +493,19 @@ export default function ChatPage() {
           <button
             type="submit"
             disabled={isLoading || !input.trim()}
-            className="flex items-center justify-center w-8 h-8 rounded-lg bg-gold/20 hover:bg-gold/30 disabled:opacity-30 disabled:hover:bg-gold/20 transition-all group"
+            className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-gold/30 to-purple-600/30 disabled:opacity-30 transition-all relative"
+            style={{
+              boxShadow: '0 0 20px rgba(251, 191, 36, 0.4)',
+              animation: 'pulse-glow 2s ease-in-out infinite'
+            }}
           >
             <svg
-              className="w-4 h-4 text-gold group-hover:translate-x-0.5 transition-transform"
-              fill="none"
-              stroke="currentColor"
+              className="w-6 h-6"
+              style={{ color: '#fbbf24' }}
+              fill="currentColor"
               viewBox="0 0 24 24"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-              />
+              <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
             </svg>
           </button>
         </form>
