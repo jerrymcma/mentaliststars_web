@@ -15,7 +15,7 @@ This guide will help you deploy the backend API so users can use the app without
    - Navigate to "Secrets" or "Environment Variables"
    - Add a new secret:
      - Name: `OPENROUTER_API_KEY`
-     - Value: `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`
+     - Value: `YOUR_OPENROUTER_API_KEY_HERE` (get from https://openrouter.ai/settings/keys)
 
 2. **Deploy Backend**
    ```bash
@@ -65,7 +65,7 @@ This guide will help you deploy the backend API so users can use the app without
    cd mentalist_stars_web/mentalist_stars_source_code/backend
    wrangler secret put OPENROUTER_API_KEY
    ```
-   When prompted, paste: `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`
+   When prompted, paste your OpenRouter API key from https://openrouter.ai/settings/keys
 
 3. **Deploy Backend**
    ```bash
