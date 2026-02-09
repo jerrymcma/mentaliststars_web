@@ -6,6 +6,6 @@ compatibility_flags = ["nodejs_compat"]
 [vars]
 NODE_ENV = "production"
 
-# Add your OpenRouter API key as a secret using:
-# wrangler secret put OPENROUTER_API_KEY
-# Then paste: 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
+# SECURITY NOTE:
+# API keys are stored in .dev.vars for local development (NOT committed to Git)
+# For production deployment, use: npx wrangler secret put OPENROUTER_API_KEY
