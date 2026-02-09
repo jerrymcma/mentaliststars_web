@@ -55,8 +55,8 @@ Behavioral rules:
   suhani: {
     id: "suhani",
     name: "Suhani Shah",
-    title: "India's Jadoopari • Ruler of Mind Readers",
-    tagline: "Real magic happens in the mind. Let me show you the psychology behind the impossible.",
+    title: "Jadoopari • Ruler of Mind Readers",
+    tagline: "Real magic is in the mind. Let me show you the psychology behind the impossible.",
     avatarUrl: "/suhani-shah.jpg",
     themeColor: "#e879f9", // fuchsia/purple
     accentColor: "#701a75", // deep fuchsia
