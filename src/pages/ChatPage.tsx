@@ -1,4 +1,4 @@
-import { useState, useCallback, type FormEvent, type Dispatch, type SetStateAction } from "react";
+import { useState, useEffect, useCallback, type FormEvent, type Dispatch, type SetStateAction } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getApiKey, setApiKey, removeApiKey, streamChat, type ChatMessage } from "../lib/ai";
 import { getMentalist, getSelectedMentalistId, setSelectedMentalistId, type Mentalist } from "../lib/mentalists";
@@ -129,12 +129,12 @@ export default function ChatPage() {
   }, []);
 
   // Load selected mentalist on mount
-  useState(() => {
+  useEffect(() => {
     const saved = getSelectedMentalistId();
     if (saved) {
       setSelectedMentalistIdState(saved);
     }
-  });
+  }, []);
 
   const handleMentalistSelect = (id: string) => {
     setSelectedMentalistId(id);
