@@ -1,0 +1,11 @@
+name = "mentalist-stars-backend"
+main = "src/worker.ts"
+compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+NODE_ENV = "production"
+
+# Add your OpenRouter API key as a secret using:
+# wrangler secret put OPENROUTER_API_KEY
+# Then paste: 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
