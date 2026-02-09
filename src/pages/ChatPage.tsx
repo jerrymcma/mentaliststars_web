@@ -144,12 +144,7 @@ export default function ChatPage() {
     setShowMentalistMenu(false);
   };
 
-  // Show selector if no mentalist selected yet
-  if (!selectedMentalistId) {
-    return <MentalistSelector onSelect={handleMentalistSelect} />;
-  }
-
-  const mentalist = getMentalist(selectedMentalistId);
+  const mentalist = selectedMentalistId ? getMentalist(selectedMentalistId) : null;
 
   const sendMessage = useCallback(
     async (text: string) => {
@@ -216,6 +211,11 @@ export default function ChatPage() {
     e.preventDefault();
     sendMessage(input);
   };
+
+  // Show selector if no mentalist selected yet
+  if (!selectedMentalistId || !mentalist) {
+    return <MentalistSelector onSelect={handleMentalistSelect} />;
+  }
 
   return (
     <div className="h-full flex flex-col bg-midnight relative overflow-hidden">
