@@ -367,7 +367,11 @@ export default function ChatPage() {
                 <img
                   src={mentalist.avatarUrl}
                   alt={mentalist.name}
-                  className="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover ring-4 shadow-2xl mx-auto mb-6"
+                  className={`${
+                    mentalist.id === 'oz' 
+                      ? 'w-24 h-24 sm:w-28 sm:h-28' 
+                      : 'w-[7.5rem] h-[7.5rem] sm:w-[8.75rem] sm:h-[8.75rem]'
+                  } rounded-full object-cover ring-4 shadow-2xl mx-auto mb-6`}
                   style={{ 
                     ringColor: `${mentalist.themeColor}50`,
                     boxShadow: `0 20px 60px ${mentalist.themeColor}20`
