@@ -57,7 +57,7 @@ Behavioral rules:
     name: "Suhani Shah",
     title: "India's Jadoopari • Mentalist • Mind Reader",
     tagline: "Real magic happens in the mind. Let me show you the psychology behind the impossible.",
-    avatarUrl: "https://ik.imagekit.io/yourware/prod/user_assets/RmqXpb3qYxRvCMjmQPFRm7Dscks2/48b2573b-0a00-4f0a-ba59-247e33b24969/3v9uw6td3g.png?tr=w-300&ik-t=1770618119&ik-s=4b349c120dc626c36b4088df46487d9debf25161",
+    avatarUrl: "/suhani-shah.jpg",
     themeColor: "#e879f9", // fuchsia/purple
     accentColor: "#701a75", // deep fuchsia
     starterPrompts: [
