@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, type FormEvent, type Dispatch, type SetStateAction } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { getApiKey, setApiKey, removeApiKey, streamChat, type ChatMessage } from "../lib/ai";
+import { getApiKey, setApiKey, removeApiKey, streamChat, hasBackendAvailable, type ChatMessage } from "../lib/ai";
 import { getMentalist, getSelectedMentalistId, setSelectedMentalistId, type Mentalist } from "../lib/mentalists";
 import MentalistSelector from "../components/MentalistSelector";
 
@@ -150,7 +150,8 @@ export default function ChatPage() {
     async (text: string) => {
       if (!text.trim() || isLoading) return;
 
-      if (!getApiKey()) {
+      // Only require API key if no backend is available
+      if (!hasBackendAvailable() && !getApiKey()) {
         setShowSettings(true);
         return;
       }
