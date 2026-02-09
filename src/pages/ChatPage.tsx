@@ -272,8 +272,7 @@ export default function ChatPage() {
             <span style={{ color: `${mentalist.themeColor}CC` }}>
               {mentalist.title}
             </span>
-            <span className="text-ghost/50"> • </span>
-            <span className="text-emerald-500">Online</span>
+            <span className="text-emerald-500"> Online</span>
           </p>
         </div>
         <button
@@ -368,7 +367,7 @@ export default function ChatPage() {
                 <img
                   src={mentalist.avatarUrl}
                   alt={mentalist.name}
-                  className="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover ring-4 shadow-2xl mx-auto mb-6"
+                  className="w-[7.2rem] h-[7.2rem] sm:w-[8.4rem] sm:h-[8.4rem] rounded-full object-cover ring-4 shadow-2xl mx-auto mb-6"
                   style={{ 
                     ringColor: `${mentalist.themeColor}50`,
                     boxShadow: `0 20px 60px ${mentalist.themeColor}20`
@@ -486,7 +485,7 @@ export default function ChatPage() {
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Ask the mentalist anything..."
+            placeholder={`Ask ${mentalist.name.split(' ')[0]} anything...`}
             disabled={isLoading}
             className="flex-1 bg-transparent text-white text-sm placeholder:text-ghost/50 outline-none font-body disabled:opacity-50"
           />
