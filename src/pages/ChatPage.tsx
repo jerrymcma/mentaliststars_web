@@ -401,7 +401,7 @@ export default function ChatPage() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8 }}
-                className="grid grid-cols-2 gap-3 sm:gap-4 max-w-md w-full"
+                className="grid grid-cols-2 gap-2 sm:gap-3 max-w-sm w-full"
               >
                 {mentalist.starterPrompts.map((prompt, i) => (
                   <motion.button
@@ -412,7 +412,7 @@ export default function ChatPage() {
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.97 }}
                     onClick={() => sendMessage(prompt)}
-                    className="px-4 py-3 text-sm sm:text-base border rounded-xl bg-white/[0.03] backdrop-blur-sm transition-colors font-body"
+                    className="px-3 py-2.5 text-xs sm:text-sm border rounded-xl bg-white/[0.03] backdrop-blur-sm transition-colors font-body"
                     style={{
                       color: `${mentalist.themeColor}DD`,
                       borderColor: `${mentalist.themeColor}30`,
