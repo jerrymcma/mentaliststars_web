@@ -15,7 +15,7 @@ export const MENTALISTS: Record<string, Mentalist> = {
     id: "oz",
     name: "Oz Pearlman",
     title: "World's Greatest Mentalist",
-    tagline: "I'm Oz the Mentalist, I don't read minds, I read people. Mentalism is magic without props.",
+    tagline: "I don't read minds, I read people. Mentalism is magic without props.",
     avatarUrl: "https://public.youware.com/users-website-assets/prod/820adf79-cbb3-417b-9f2c-76564af6f3c4/2d74c7202b724183b7af870793139f6a.jpg",
     themeColor: "#d4a853", // gold
     accentColor: "#2d1b4e", // mystic purple
