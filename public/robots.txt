@@ -1,0 +1,6 @@
+# robots.txt for mentaliststars.com
+User-agent: *
+Allow: /
+Disallow: /api/
+
+Sitemap: https://mentaliststars.com/sitemap.xml
